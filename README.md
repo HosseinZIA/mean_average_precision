@@ -63,7 +63,7 @@ for i in range(10):
     metric_fn.add(preds, gt)
 
 # compute PASCAL VOC metric
-print(f"VOC PASCAL mAP: {metric_fn.value(iou_thresholds=0.5, recall_thresholds=np.arange(0., 1.1, 0.1))['mAP']}")
+print(f"VOC PASCAL mAP: {metric_fn.value(iou_thresholds=0.5, recall_thresholds=np.arange(0., 1.1, 0.1)).astype(np.float32)['mAP']}")
 
 # compute PASCAL VOC metric at the all points
 print(f"VOC PASCAL mAP in all points: {metric_fn.value(iou_thresholds=0.5)['mAP']}")
